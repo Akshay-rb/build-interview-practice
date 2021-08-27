@@ -16,19 +16,40 @@ function listTitle(json){
 }
 
 function errorHandler(error){
-    console.log('an error occured ', error)
+    console.log('here')
+    if(response.status === 404){
+        console.log('status here')
+    }
+    // console.log(response.status )
+    // console.log('an error occured ', error)
 
 }
 
 const showHandler = () =>{
     fetch(url)
-    // .then(response => console.log(response.status ))
     .then(response => response.json())
     .then(json => listTitle(json))
-    // .catch((error) => {console.log('an error occured'+ error)})
-    .catch((error) => {
-        console.error('error occured',error);
-      })
+    .catch(errorHandler)
 }
 
+
 showButton.addEventListener('click', showHandler)
+
+
+// const showHandler = () =>{
+//     fetch(url)
+//     .then( response =>{
+//         if(response.ok){
+//             console.log('success')
+//             return response.json()
+//         }else{
+//             if(response.status === 404){
+//                 console.log('not found the request')
+//                 output.innerText = 'not found the resource you are looking for'
+//             }
+//         }
+//     })
+//     .then(json => console.log(json))
+//     .catch(error => output.innerText = error)
+    
+// }
