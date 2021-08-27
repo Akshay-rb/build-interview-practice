@@ -8,9 +8,6 @@ const showButton = document.querySelector("#show")
 const output = document.querySelector("#output")
 let url = 'https://jsonplaceholder.typicode.com/todos'
 
-fetch(url)
-.then(response => console.log(response))
-
 function listTitle(json){
     for(const value of Object.values(json)){
         console.log(value.title)
@@ -18,10 +15,20 @@ function listTitle(json){
     }
 }
 
+function errorHandler(error){
+    console.log('an error occured ', error)
+
+}
+
 const showHandler = () =>{
     fetch(url)
+    // .then(response => console.log(response.status ))
     .then(response => response.json())
     .then(json => listTitle(json))
+    // .catch((error) => {console.log('an error occured'+ error)})
+    .catch((error) => {
+        console.error('error occured',error);
+      })
 }
 
 showButton.addEventListener('click', showHandler)
