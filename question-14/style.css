@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+
+body {
+  font-family: "Satisfy", cursive;
+  text-align: center;
+}
+
+:root {
+  --primary-color: #7c3aed;
+  --secondary-color: #a78bfa;
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+h2 {
+  color: var(--secondary-color);
+}
+
+#button-1 {
+  color: var(--primary-color);
+}
+
+#button-2 {
+  color: var(--secondary-color);
+}
+
+p {
+  color: cadetblue;
+}
